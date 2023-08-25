@@ -3,7 +3,7 @@ import local from './local';
 import dev from './dev';
 import prod from './prod';
 
-const phase = process.env.NODE_ENV;
+const phase = process.env.NODE_ENV.replace(/\s/g, '');
 
 let conf = {};
 
