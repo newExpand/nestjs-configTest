@@ -6,11 +6,15 @@ import { WeatherModule } from './weather/weather.module';
 
 console.log('env : ' + process.env.NODE_ENV);
 console.log('현재 디랙토리 : ' + process.cwd());
+
 @Module({
   imports: [
     ConfigModule.forRoot({
       isGlobal: true,
-      envFilePath: `${process.cwd()}/envs/${process.env.NODE_ENV}.env`,
+      envFilePath: `${process.cwd()}/envs/${process.env.NODE_ENV}.env`.replace(
+        /\s/g,
+        '',
+      ),
     }),
     WeatherModule,
   ],
