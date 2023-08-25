@@ -3,6 +3,7 @@ import { ConfigModule } from '@nestjs/config';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { WeatherModule } from './weather/weather.module';
+import config from './configs/config';
 
 console.log('env : ' + process.env.NODE_ENV);
 console.log('현재 디랙토리 : ' + process.cwd());
@@ -15,6 +16,7 @@ console.log('현재 디랙토리 : ' + process.cwd());
         /\s/g,
         '',
       ),
+      load: [config],
     }),
     WeatherModule,
   ],
