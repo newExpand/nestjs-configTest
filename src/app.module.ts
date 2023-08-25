@@ -17,6 +17,7 @@ console.log('현재 디랙토리 : ' + process.cwd());
         '',
       ),
       load: [config],
+      cache: true,
     }),
     WeatherModule,
   ],
